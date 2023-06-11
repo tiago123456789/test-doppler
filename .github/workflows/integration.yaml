@@ -1,0 +1,24 @@
+name: Test intregration between Github actions and Doppler
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+
+  integration-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+
+      - uses: actions/setup-node@v2
+
+      - name: Load environments
+        run: doppler run -- node index.js
+        env:
+          DOPPLER_TOKEN: ${{ secrets.DOPPLER_TOKEN }}
+
