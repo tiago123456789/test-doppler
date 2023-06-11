@@ -15,7 +15,7 @@ jobs:
 
       - uses: actions/setup-node@v2
 
-      - uses: actions/setup-node@v2
+      - uses: dopplerhq/cli-action@v2
 
       - name: Load environments
         run: doppler run -- node index.js
